@@ -1,25 +1,54 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<style>
+    .card-custom {
+        overflow: hidden;
+        min-height: 450px;
+        box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
+    }
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>PoliPrint | Impressoras e Copiadoras | Manaus</title>
-    <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/img/Logo-Poliprint4.ico" />
-    <!-- Font Awesome icons (free version)-->
-    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-    <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
-</head>
+    .card-custom-img {
+        height: 200px;
+        min-height: 200px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        border-color: inherit;
+    }
 
-<body id="page-top">
+    /* First border-left-width setting is a fallback */
+    .card-custom-img::after {
+        position: absolute;
+        content: '';
+        top: 161px;
+        left: 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-top-width: 40px;
+        border-right-width: 0;
+        border-bottom-width: 0;
+        border-left-width: 545px;
+        border-left-width: calc(575px - 5vw);
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: inherit;
+    }
 
+    .card-custom-avatar img {
+        border-radius: 50%;
+        box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
+        position: absolute;
+        top: 100px;
+        left: 1.25rem;
+        width: 100px;
+        height: 100px;
+    }
+</style>
+<?PHP
+
+if (isset($_SESSION["permissaoF"])) {
+
+    ?>
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="]
@@ -49,13 +78,12 @@
                             </li>
                             <li>
                                 <a style="color: blueviolet;" class="dropdown-item" href="#">
-                                    Outsourcing de TI (Locação de Notbook e Desktop)
+                                    Outsourcing de TI (Locação de Notebook e Desktop)
                                     <hr>
                                 </a>
                             </li>
                             <li>
-                                <a style="color: blueviolet;" class="dropdown-item" href="#">
-                                    Venda de Computadores</a>
+                                <a style="color: blueviolet;" class="dropdown-item" href="#">Venda de Computadores</a>
                                 <hr>
                             </li>
                             <li>
@@ -65,8 +93,7 @@
                                 <hr>
                             </li>
                             <li>
-                                <a style="color: blueviolet;" class="dropdown-item" href="#">
-                                    Venda de Suprimentos</a>
+                                <a style="color: blueviolet;" class="dropdown-item" href="#">Venda de Suprimentos</a>
                                 <hr>
                             </li>
                             <li>
@@ -179,7 +206,7 @@
         </div>
     </nav>
     <!-- Masthead-->
-    <header class="masthead">
+    <header class="masthead" style='margin-top:-50px;'>
         <div class="container">
             <div class="masthead-subheading" style="color:#000; background-color: rgb(255, 255, 255, 0.5);">
                 </BR><b>Reduza Custos e Otimize sua Impressão com Nossos Serviços de Outsourcing.
@@ -189,48 +216,6 @@
                 conosco no Whatsapp</a>
         </div>
     </header>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        .carousel {
-            display: flex;
-            overflow: hidden;
-            width: 300px;
-            margin: 0 auto;
-        }
-
-        .carousel-item {
-            flex: 0 0 100%;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .carousel-container {
-            display: flex;
-            width: 300%;
-        }
-
-        .carousel img {
-            width: 100%;
-            height: auto;
-        }
-
-        .carousel-controls {
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        .carousel-controls button {
-            border: none;
-            background-color: #333;
-            color: #fff;
-            padding: 5px 10px;
-            cursor: pointer;
-        }
-    </style>
     </head>
 
     <body>
@@ -239,12 +224,16 @@
         <section class="page-section" id="services">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Serviços</h2>
-                    <h3 class="section-subheading text-muted">Oferecemos Serviços de Dados Variavéis, Serviços de
-                        Impressão
-                        Gerenciado, Como Ajudamos na Gestão de Impressão, Melhore a Satisfação e a Produtividade dos
-                        Funcionários
-                        , Aumente a Segurança do Documento, Aprimore a Sustentabilidade Ambiental.</h3>
+                    <h2 class="section-heading text-uppercase">Soluções</h2>
+                    <h3 class="section-subheading text-muted">
+                        Outsourcing de Impressão, Laser, Térmica e Jato de Tinta,
+                        Outsourcing de TI (Locação de Notebook e Desktop),
+                        Venda de Computadores,
+                        Venda de Impressoras/Mulfuncionais,
+                        Venda de Suprimentos,
+                        Digitalização de Documentos / GED,
+                        Impressão de Dados Variáveis.
+                    </h3>
 
                 </div>
                 <div class="row text-center">
@@ -253,34 +242,23 @@
                             <i class="fas fa-circle fa-stack-2x text-primary"></i>
                             <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
                         </span>
-                        <h4 class="my-3">Dados </br>Variaveis</h4>
+                        <h4 class="my-3">Outsourcing de impressoras e multifuncionais</h4>
                         <p class="text-muted">
-
-                            Comunicar-se exclusivamente com clientes é vital atualmente. Personalize impressos com
-                            informações relevantes e tratamento especial para alcançar retornos significativamente
-                            maiores
-                            (5 a 10 vezes) do que métodos convencionais. Com ferramentas personalizadas (Software e
-                            Hardware), a POLIPRINT transforma materiais promocionais impressos em um canal de
-                            comunicação
-                            poderoso com os clientes, impulsionando o sucesso da sua empresa.
+                            Aproveite as vantagens oferecidas pelas opções de terceirização de serviços de impressão e
+                            dispositivos multifuncionais, assegurando eficiência para sua equipe e aprimoramento para a
+                            administração de sua empresa.
                         </p>
-                        <a class="btn btn-primary btn-xl text-uppercase" href="">Saiba Mais</a>
+                        <a class="btn btn-primary btn-xl text-uppercase" href="?pg=s1">Saiba Mais</a>
                     </div>
                     <div class="col-md-4">
                         <span class="fa-stack fa-4x">
                             <i class="fas fa-circle fa-stack-2x text-primary"></i>
                             <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
                         </span>
-                        <h4 class="my-3">Serviços de Impressão Gerenciado</h4>
-                        <p class="text-muted">Sabe o custo total de impressão na sua empresa? Tem experiência para
-                            controlar
-                            gastos?
+                        <h4 class="my-3">Outsourcing de TI (Locação de Notebook e Desktop)</h4>
+                        <p class="text-muted">
 
-                            Muitas empresas não sabem, até nos procurarem. Com nossos serviços de gestão de impressão e
-                            software líder, clientes ganham visibilidade e controle, reduzindo custos.
-
-                            Esses serviços não são só para grandes corporações; funcionam para empresas de todos os
-                            tamanhos.</p>
+                        </p>
                         <a class="btn btn-primary btn-xl text-uppercase" href="">Saiba Mais</a>
                     </div>
                     <div class="col-md-4">
@@ -318,8 +296,7 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img style="width: 300px;" class="img-fluid" src="assets/img/impressoras.jpg"
-                                    alt="..." />
+                                <img style="width: 300px;" class="img-fluid" src="assets/img/impressoras.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-heading">Impressoras e Multifuncionais</div>
@@ -364,8 +341,7 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img style="width: 400px;" class="img-fluid" src="assets/img/suprimentos.PNG"
-                                    alt="..." />
+                                <img style="width: 400px;" class="img-fluid" src="assets/img/suprimentos.PNG" alt="..." />
                             </a>
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-heading">Suprimentos</div>
@@ -516,16 +492,16 @@
                 <div class="row align-items-center">
                     <h1 class="section-heading text-uppercase">Nossas Marcas</h1>
                     <div class="col-md-3 col-sm-6 my-3">
-                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto"
-                                src="assets/img/logos/microsoft.svg" alt="..." aria-label="Microsoft Logo" /></a>
+                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/microsoft.svg"
+                                alt="..." aria-label="Microsoft Logo" /></a>
                     </div>
                     <div class="col-md-3 col-sm-6 my-3">
                         <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/google.svg"
                                 alt="..." aria-label="Google Logo" /></a>
                     </div>
                     <div class="col-md-3 col-sm-6 my-3">
-                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto"
-                                src="assets/img/logos/facebook.svg" alt="..." aria-label="Facebook Logo" /></a>
+                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/facebook.svg"
+                                alt="..." aria-label="Facebook Logo" /></a>
                     </div>
                     <div class="col-md-3 col-sm-6 my-3">
                         <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/ibm.svg"
@@ -716,42 +692,4 @@
             </div>
         </div>
 
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-        <script>
-
-            document.addEventListener("DOMContentLoaded", function () {
-                // make it as accordion for smaller screens
-                if (window.innerWidth > 992) {
-                    document.querySelectorAll('.navbar .nav-item').forEach(function (everyitem) {
-                        everyitem.addEventListener('mouseover', function (e) {
-                            let el_link = this.querySelector('a[data-mdb-toggle]');
-                            if (el_link != null) {
-                                let nextEl = el_link.nextElementSibling;
-                                el_link.classList.add('show');
-                                nextEl.classList.add('show');
-                            }
-                        });
-                        everyitem.addEventListener('mouseleave', function (e) {
-                            let el_link = this.querySelector('a[data-mdb-toggle]');
-                            if (el_link != null) {
-                                let nextEl = el_link.nextElementSibling;
-                                el_link.classList.remove('show');
-                                nextEl.classList.remove('show');
-                            }
-                        });
-                    });
-                }
-            });
-
-        </script>
-    </body>
-
-</html>
+    <?php } ?>
